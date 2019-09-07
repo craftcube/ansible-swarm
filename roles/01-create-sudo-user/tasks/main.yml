@@ -7,9 +7,10 @@
     state=present
 
 - name: set password less access for sense
-  lineinfile: dest=/etc/sudoers state=present  line='{{item}}' validate='visudo -cf %s'
-  with_items:
-    - "sense ALL=(ALL) NOPASSWD: ALL"
-#  copy: src=sudoers
-#    dest=/etc/sudoers.d
-#    mode=0440
+  lineinfile:
+    path: /etc/sudoers.d/ansibleuser
+    line: 'ansibleuser ALL=(ALL) NOPASSWD: ALL'
+    state: present
+    mode: 0440
+    create: yes
+    validate: 'visudo -cf %s'

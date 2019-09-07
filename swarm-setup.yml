@@ -1,0 +1,7 @@
+---
+- name: common configuration
+  hosts: all
+  roles:
+    - 01-create-sudo-user
+    - 02-install-modules
+    - 03-configure-hosts-file

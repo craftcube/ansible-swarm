@@ -46,11 +46,11 @@
     - 10-docker-installation
 
 - name: init Docker swarm
-  hosts: node1
+  hosts: ceph1
   roles:
     - 11-docker-swarm-init
 
 - name: add managers
-  hosts: node2, node3
+  hosts: ceph2, ceph3
   roles:
     - 12-docker-swarm-add-manager

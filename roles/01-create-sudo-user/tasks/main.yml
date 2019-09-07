@@ -7,7 +7,7 @@
     append: yes
     comment: "sense nologin User"
     state: present
-
+  become: true
 - name: set password less access for sense
   lineinfile:
     path: /etc/sudoers.d/ansibleuser

@@ -1,10 +1,11 @@
 ---
 - name: create sudo user
-  user: name=sense
-    groups=sudo
-    shell=/bin/bash
-    generate_ssh_key=no
-    state=present
+  user:
+    name: sense
+    shell: /bin/bash
+    generate_ssh_key: no
+    state=: present
+    groups: sense
 
 - name: set password less access for sense
   lineinfile:

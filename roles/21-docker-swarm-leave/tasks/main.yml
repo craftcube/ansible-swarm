@@ -1,0 +1,14 @@
+---
+- name: leave swarm
+  shell: docker swarm leave -f
+  ignore_errors: true
+
+- name: install Docker
+  yum: name="docker-ce" state=latest update_cache=yes state=absent
+  tags: docker
+
+- name: Remove repository from a specific repo file
+  yum_repository:
+    name: docker_repo
+    file: docker_ce.repos
+    state: absent

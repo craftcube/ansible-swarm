@@ -23,7 +23,7 @@
     description: "Ceph yum repository"
     file: ceph_repos
     baseurl: https://download.ceph.com/rpm-hammer/
-    enabled: no
+    enabled: yes
 
 - name: Update repository cache and install ceph-deploy package
   yum:

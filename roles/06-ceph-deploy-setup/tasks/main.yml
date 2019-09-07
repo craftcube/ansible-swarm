@@ -1,0 +1,26 @@
+---
+- name: add release key
+  apt_key:
+    url: https://download.ceph.com/keys/release.asc
+    state: present
+#- name: add Ceph packages to repository
+#  apt_repository:
+#    repo: deb https://download.ceph.com/debian {{ ansible_lsb.codename|lower }} main
+#    state: present
+#    filename: '/etc/apt/sources.list.d/ceph.list'
+#- name: Update repositories cache and install "ceph-deploy" package
+#  apt:
+#    name: ceph-deploy
+#    update_cache: yes
+
+- name: add Ceph yum repository
+  yum_repository:
+    name: ceph_repo
+    base_url: http://download.ceph.com/rpm-hammer/
+    description: "Ceph yum repository"
+
+- name: Update repository cache and install ceph-deploy package
+  yum:
+    name: ceph-deploy
+    update_cache: yes
+    state: latest

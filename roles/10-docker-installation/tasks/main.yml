@@ -34,8 +34,8 @@
 #  tags: docker
 
 - name: add Docker key
-  apt_key:
-    url: https://download.docker.com/linux/centos/gpg
+  rpm_key:
+    key: https://download.docker.com/linux/centos/gpg
     state: present
   tags: docker
 

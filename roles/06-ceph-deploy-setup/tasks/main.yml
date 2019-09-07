@@ -1,8 +1,8 @@
 ---
-- name: add release key
-  apt_key:
-    url: https://download.ceph.com/keys/release.asc
-    state: present
+#- name: add release key
+#  apt_key:
+#    url: https://download.ceph.com/keys/release.asc
+#    state: present
 #- name: add Ceph packages to repository
 #  apt_repository:
 #    repo: deb https://download.ceph.com/debian {{ ansible_lsb.codename|lower }} main
@@ -12,6 +12,10 @@
 #  apt:
 #    name: ceph-deploy
 #    update_cache: yes
+- name: add release key
+  rpm_key:
+    url: https://download.ceph.com/keys/release.asc
+    state: present
 
 - name: add Ceph yum repository
   yum_repository:

@@ -7,6 +7,7 @@
     state=present
 
 - name: set password less access for sense
-  copy: src=sudoers
-    dest=/etc/sudoers.d
-    mode=0440
+  lineinfile: dest=/etc/sudoers state=present  line='sense ALL=(ALL) NOPASSWD:ALL' validate='visudo -cf %s'
+#  copy: src=sudoers
+#    dest=/etc/sudoers.d
+#    mode=0440

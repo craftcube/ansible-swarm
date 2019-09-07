@@ -24,14 +24,14 @@
 #  tags: docker
 
 ---
-- name: install Docker dependencies
-  yum: name={{ item }} state=latest update_cache=yes state=present
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - software-properties-common
-  tags: docker
+#- name: install Docker dependencies
+#  yum: name={{ item }} state=latest update_cache=yes state=present
+#  with_items:
+#    - apt-transport-https
+#    - ca-certificates
+#    - curl
+#    - software-properties-common
+#  tags: docker
 
 - name: add Docker key
   apt_key:

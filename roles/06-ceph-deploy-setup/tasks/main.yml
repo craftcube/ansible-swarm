@@ -14,7 +14,7 @@
 #    update_cache: yes
 - name: add release key
   rpm_key:
-    url: https://download.ceph.com/keys/release.asc
+    key: https://download.ceph.com/keys/release.asc
     state: present
 
 - name: add Ceph yum repository

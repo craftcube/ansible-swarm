@@ -5,3 +5,17 @@
     - 01-create-sudo-user
     - 02-install-modules
     - 03-configure-hosts-file
+
+- name: setup admin node
+  become: yes
+  become_user: sense
+  hosts: admin
+  roles:
+    - 04-admin-configure
+
+- name: copy admin key to nodes
+  become: yes
+  become_user: sense
+  hosts: mon, osd
+  roles:
+    - 05-admin-copy-keys

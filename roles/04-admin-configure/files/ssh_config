@@ -1,0 +1,15 @@
+Host ansible
+        Hostname ansible
+        User sense
+
+Host ceph1
+        Hostname ceph1
+        User sense
+
+Host ceph2
+        Hostname ceph2
+        User sense
+
+Host ceph3
+        Hostname ceph3
+        User sense

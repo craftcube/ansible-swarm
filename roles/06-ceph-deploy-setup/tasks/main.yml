@@ -20,7 +20,7 @@
 - name: add Ceph yum repository
   yum_repository:
     name: ceph_repo
-    base_url: http://download.ceph.com/rpm-hammer/
+    baseurl: http://download.ceph.com/rpm-hammer/
     description: "Ceph yum repository"
 
 - name: Update repository cache and install ceph-deploy package

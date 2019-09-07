@@ -3,7 +3,7 @@
   user:
     name: sense
     shell: /bin/bash
-    groups: sense
+    group: sense
     append: yes
     comment: "sense nologin User"
     state: present

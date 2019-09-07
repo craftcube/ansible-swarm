@@ -9,8 +9,8 @@
   become: true
 - name: set password less access for sense
   lineinfile:
-    path: /etc/sudoers.d/ansibleuser
-    line: 'ansibleuser ALL=(ALL) NOPASSWD: ALL'
+    path: /etc/sudoers.d/sense
+    line: 'sense ALL=(ALL) NOPASSWD: ALL'
     state: present
     mode: 0440
     create: yes

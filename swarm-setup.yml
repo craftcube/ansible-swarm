@@ -20,25 +20,25 @@
   roles:
     - 05-admin-copy-keys
 
-#- name: ceph-deploy setup
-#  hosts: admin
-#  roles:
-#    - 06-ceph-deploy-setup
-#
-#- name: deploy cluster
-#  become: true
-#  become_method: su
-#  become_user: sense
-#  become_flags: '-'
-#  hosts: admin
-#  roles:
-#    - 07-deploy-ceph-cluster
-#
+- name: ceph-deploy setup
+  hosts: admin
+  roles:
+    - 06-ceph-deploy-setup
+
+- name: deploy cluster
+  become: true
+  become_method: su
+  become_user: sense
+  become_flags: '-'
+  hosts: admin
+  roles:
+    - 07-deploy-ceph-cluster
+
 #- name: install REX-Ray
 #  hosts: osd
 #  roles:
-#    - rex-ray-installation
-#    - rex-ray-configuration
+#    - 08-rex-ray-installation
+#    - 09-rex-ray-configuration
 
 - name: install Docker
   hosts: osd

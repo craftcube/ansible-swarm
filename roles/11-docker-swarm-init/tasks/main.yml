@@ -5,19 +5,22 @@
   ignore_errors: true
   tags: swarm
 
-#- name: init Docker swarm
-#  shell: >
-#    docker swarm init
-#    --advertise-addr={{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:2377
-#  when: swarm_status.rc != 0
-#  run_once: true
-#  tags: swarm
+- name: init Docker swarm
+  shell: >
+    docker swarm init
+    --advertise-addr={{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:2377
+  when: swarm_status.rc != 0
+  run_once: true
+  tags: swarm
 
-- name: Init a new swarm with default parameters
-  docker_swarm:
-    state: present
+
+
+#- name: Init a new swarm with default parameters
+#  docker_swarm:
+#    state: present
 
 - name: get manager join token
   shell: docker swarm join-token --quiet manager
   register: manager_token
   tags: swarm
+- debug: var=manager_token

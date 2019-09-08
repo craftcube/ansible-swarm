@@ -6,7 +6,7 @@
 - name: add managers
   docker_swarm:
     state: join
-    advertise_addr: {{ hostvars['ceph1']['ansible_default_ipv4']['address'] }}
+    advertise_addr: 192.168.56.21
     join_token: {{ hostvars['ceph1']['manager_token']['stdout'] }}
 
 - name: register swarm status

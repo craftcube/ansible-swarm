@@ -3,7 +3,7 @@
   shell: docker swarm leave -f
   ignore_errors: true
 
-- name: install Docker
+- name: remove Docker
   yum: name="docker-ce" state=latest update_cache=yes state=absent
   tags: docker
 

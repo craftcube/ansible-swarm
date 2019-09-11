@@ -35,7 +35,7 @@
     chdir: ~/ceph
 
 - name: add OSDs
-  shell: "ceph-deploy osd create {{ item }}:/dev/sda"
+  shell: "ceph-deploy osd create {{ item }}:/dev/sdb"
   with_items:
     - "ceph1"
     - "ceph2"

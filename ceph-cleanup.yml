@@ -1,0 +1,9 @@
+---
+- name: delete cluster
+  hosts: admin
+  become: true
+  become_method: 'su'
+  become_user: sense
+  become_flags: '-'
+  roles:
+    - 31-delete-ceph-cluster

@@ -12,18 +12,21 @@
 #  apt:
 #    name: ceph-deploy
 #    update_cache: yes
-- name: add release key
-  rpm_key:
-    key: https://download.ceph.com/keys/release.asc
-    state: present
+#- name: add release key
+#  rpm_key:
+#    key: https://download.ceph.com/keys/release.asc
+#    state: present
 
 - name: add Ceph yum repository
   yum_repository:
     name: ceph_repo
-    description: "Ceph yum repository"
-    file: ceph_repos
+    description: "Ceph.Repo"
+    file: ceph.repos
     baseurl: https://mirrors.tuna.tsinghua.edu.cn/ceph/rpm-nautilus/el7/$basearch
     enabled: yes
+    rpm_key:
+      key: https://download.ceph.com/keys/release.asc
+      state: present
 
 - name: Update repository cache and install ceph-deploy package
   yum:

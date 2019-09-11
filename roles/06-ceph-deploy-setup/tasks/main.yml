@@ -19,7 +19,7 @@
 
 - name: add Ceph yum repository
   yum_repository:
-    name: ceph.repo
+    name: ceph
     description: "ceph.repo"
     file: ceph
     baseurl: https://mirrors.tuna.tsinghua.edu.cn/ceph/rpm-nautilus/el7/$basearch

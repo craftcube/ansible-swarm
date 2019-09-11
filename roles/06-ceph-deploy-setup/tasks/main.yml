@@ -24,9 +24,8 @@
     file: ceph.repo
     baseurl: https://download.ceph.com/ceph/rpm-nautilus/el7/$basearch
     enabled: yes
-    rpm_key:
-      key: https://download.ceph.com/keys/release.asc
-      state: present
+    gpgkey: https://download.ceph.com/keys/release.asc
+    gpgcheck: yes
 
 - name: Update repository cache and install ceph-deploy package
   yum:

@@ -9,6 +9,6 @@
 
 - name: Remove repository from a specific repo file
   yum_repository:
-    name: docker_repo
-    file: docker_ce.repos
+    name: docker-ce
+    file: docker-ce.repos
     state: absent

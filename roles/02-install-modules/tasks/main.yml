@@ -1,7 +1,9 @@
 ---
 - name: install modules
-  yum: name={{ item }} state=latest update_cache=yes
-  with_items:
-    - ntp
-    - python
-    - parted
+  yum:
+    name:
+      - ntp
+      - python
+      - parted
+    state: latest
+    update_cache: yes

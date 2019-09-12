@@ -1,0 +1,6 @@
+---
+- name: install REX-Ray
+  hosts: osd
+  roles:
+    - 08-rex-ray-installation
+    - 09-rex-ray-configuration

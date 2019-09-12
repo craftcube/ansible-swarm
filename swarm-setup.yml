@@ -1,21 +1,15 @@
 ---
-#- name: install REX-Ray
-#  hosts: osd
-#  roles:
-#    - 08-rex-ray-installation
-#    - 09-rex-ray-configuration
-
 - name: install Docker
   hosts: osd
   roles:
     - 10-docker-installation
 
 - name: init Docker swarm
-  hosts: ceph1
+  hosts: node1
   roles:
     - 11-docker-swarm-init
 
 - name: add managers
-  hosts: ceph2, ceph3
+  hosts: node2, node3
   roles:
     - 12-docker-swarm-add-manager

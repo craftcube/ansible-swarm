@@ -55,7 +55,7 @@
 - name: "add docker group"
   group: name=docker state=present
 
-- name: "add ubuntu to docker group"
+- name: "add sense to docker group"
   user: name=sense groups=docker append=yes
 
 - name: "restart docker service"
@@ -67,8 +67,8 @@
   changed_when: false
 
 - name: "setup firewall for public-zone"
-  command: firewall-cmd --permanent --zone=public --add-rich-rule='rule family=ipv4 source address=192.168.56.0/24 accept'
-- name: "setup firewall for public-zone"
-  command: firewall-cmd --permanent --zone=public --add-rich-rule='rule family=ipv4 source address=10.0.2.0/24 accept'
+  command: firewall-cmd --permanent --zone=public --add-rich-rule='rule family=ipv4 source address=192.168.2.0/24 accept'
+#- name: "setup firewall for public-zone"
+#  command: firewall-cmd --permanent --zone=public --add-rich-rule='rule family=ipv4 source address=10.0.2.0/24 accept'
 - name: "reload firewall settings"
   command: firewall-cmd --reload

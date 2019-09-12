@@ -1,15 +1,15 @@
-Host ansible
-        Hostname ansible
+Host admin
+        Hostname admin
         User sense
 
-Host ceph1
-        Hostname ceph1
+Host node1
+        Hostname node1
         User sense
 
-Host ceph2
-        Hostname ceph2
+Host node2
+        Hostname node2
         User sense
 
-Host ceph3
-        Hostname ceph3
+Host node3
+        Hostname node3
         User sense

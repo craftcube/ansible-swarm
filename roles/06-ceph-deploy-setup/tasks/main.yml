@@ -17,15 +17,21 @@
 #    key: https://download.ceph.com/keys/release.asc
 #    state: present
 
+#- name: add Ceph yum repository
+#  yum_repository:
+#    name: ceph
+#    description: "ceph.repo"
+#    file: ceph
+#    baseurl: https://mirrors.tuna.tsinghua.edu.cn/ceph/rpm-nautilus/el7/$basearch
+#    enabled: yes
+#    gpgkey: https://download.ceph.com/keys/release.asc
+#    gpgcheck: yes
+
 - name: add Ceph yum repository
-  yum_repository:
-    name: ceph
-    description: "ceph.repo"
-    file: ceph
-    baseurl: https://mirrors.tuna.tsinghua.edu.cn/ceph/rpm-nautilus/el7/$basearch
-    enabled: yes
-    gpgkey: https://download.ceph.com/keys/release.asc
-    gpgcheck: yes
+  copy:
+    src: ceph.repo
+    dest: /etc/yum.repos.d/ceph.repo
+    mode: 0644
 
 - name: Update repository cache and install ceph-deploy package
   yum:

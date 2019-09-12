@@ -20,6 +20,6 @@
 - name: run ssh-keyscan to add keys to known_hosts
   shell: "ssh-keyscan {{ item }} >> ~/.ssh/known_hosts"
   with_items:
-    - "ceph1"
-    - "ceph2"
-    - "ceph3"
+    - "node1"
+    - "node2"
+    - "node3"

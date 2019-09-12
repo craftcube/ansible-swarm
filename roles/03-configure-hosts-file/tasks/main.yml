@@ -7,4 +7,8 @@
 - name: configure hosts file
   lineinfile: path=/etc/hosts regexp='.*{{ item }}$' line="{{ hostvars[item].ansible_default_ipv4.address }} {{item}}" state=present
   when: hostvars[item].ansible_default_ipv4.address is defined
-  with_items: "{{ groups['node'] }}"
+  with_items:
+    - node1
+    - node2
+    - node3
+    - admin

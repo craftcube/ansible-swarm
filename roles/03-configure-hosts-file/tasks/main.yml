@@ -31,6 +31,7 @@
     chain: INPUT
     in_interface: ens33
     source: 192.168.2.0/24
+    protocol: tcp
     destination_port:
       - 6789
       - 6800:7300

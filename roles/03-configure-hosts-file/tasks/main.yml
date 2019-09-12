@@ -12,3 +12,24 @@
     - node2
     - node3
     - admin
+
+- name: Disable SELinux
+  selinux:
+    state: disabled
+
+- name: "Ceph monitors firewall enable"
+  command: firewall-cmd --zone=public --add-service=ceph-mon --permanent
+- name: "OSDs and MDSs firewall enable"
+  command: firewall-cmd --zone=public --add-service=ceph --permanent
+- name: "setup firewall for public-zone"
+  command: firewall-cmd --permanent --zone=public --add-rich-rule='rule family=ipv4 source address=192.168.2.0/24 accept'
+- name: "reload firewall settings"
+  command: firewall-cmd --reload
+
+- name: "set iptables"
+  iptables:
+    chain: INPUT
+    in_interface: ens33
+    source: 192.168.2.0/24
+    destination_port: 6789 6800:7300
+    jump: ACCEPT

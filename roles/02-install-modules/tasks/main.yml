@@ -3,7 +3,7 @@
   yum:
     name:
       - ntp
-      - python
-      - parted
+      - ntpdate
+      - ntp-doc
     state: latest
     update_cache: yes

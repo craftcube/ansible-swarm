@@ -35,7 +35,7 @@
     chdir: ~/ceph
 
 - name: copy configuration file and admin key
-  shell: ceph-deploy mgr "{{ item }}"
+  shell: ceph-deploy mgr create "{{ item }}"
   with_items:
     - "node1"
     - "node2"

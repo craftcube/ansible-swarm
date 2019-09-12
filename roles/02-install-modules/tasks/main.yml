@@ -7,3 +7,8 @@
       - ntp-doc
     state: latest
     update_cache: yes
+
+- name: Make sure a service is running
+  systemd:
+    state: started
+    name: ntpd
